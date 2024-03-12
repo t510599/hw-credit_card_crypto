@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
+# Validates credit card number using Luhn Algorithm
 module LuhnValidator
-  # Validates credit card number using Luhn Algorithm
   # arguments: none
   # assumes: a local String called 'number' exists
   # returns: true/false whether last digit is correct
