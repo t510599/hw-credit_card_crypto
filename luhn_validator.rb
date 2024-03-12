@@ -6,6 +6,11 @@ module LuhnValidator
   def validate_checksum
     nums_a = number.to_s.chars.map(&:to_i)
 
-    # TODO: use the integers in nums_a to validate its last check digit
+    nums_a[-1] == luhn_checksum(nums_a[0..-2])
+  end
+
+  def luhn_checksum(nums)
+    tmp = nums.reverse!.map.with_index { |num, i| (num * (i.even? ? 2 : 1)).to_s.chars.map(&:to_i).sum }.sum
+    (10 - tmp) % 10
   end
 end
