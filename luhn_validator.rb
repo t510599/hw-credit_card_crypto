@@ -10,7 +10,11 @@ module LuhnValidator
   end
 
   def luhn_checksum(nums)
-    tmp = nums.reverse!.map.with_index { |num, i| (num * (i.even? ? 2 : 1)).to_s.chars.map(&:to_i).sum }.sum
-    (10 - tmp) % 10
+    sum = nums.reverse!.map.with_index do |num, i|
+      n = (num * (i.even? ? 2 : 1))
+      # digit sum
+      n / 10 + n % 10
+    end.sum
+    -sum % 10
   end
 end
