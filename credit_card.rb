@@ -44,19 +44,16 @@ class CreditCard
 
   # return a hash of the serialized credit card object
   def hash
-    # implement this method
+    # TODO: implement this method
     #   - Produce a hash (using default hash method) of the credit card's
     #     serialized contents.
     #   - Credit cards with identical information should produce the same hash
-    to_s.hash
   end
 
   # return a cryptographically secure hash
   def hash_secure
-    # implement this method
+    # TODO: implement this method
     #   - Use sha256 to create a cryptographically secure hash.
     #   - Credit cards with identical information should produce the same hash
-    require 'digest'
-    Digest::SHA256.hexdigest(to_s)
   end
 end
